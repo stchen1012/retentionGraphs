@@ -1,0 +1,32 @@
+{% comment %} {% if latest_list %}
+    <ul>
+      <li><a href="/polls/plotTwo">Link to Plot of employee ages</a></li>
+    {% for item in latest_list %}
+        <li><a href="/polls/{{ age.id}}/">{{ item.yearsincurrentrole }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %} {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+</head>
+<body>
+    <h1>Employee Churn Data Visualization</h1>
+    <!--<img src="{{ image_employeecount }}" alt=""/>
+    <img src="{{ image_gender }}" alt=""/>
+    <img src="{{ image_marital_attrition }}" alt=""/>
+    <img src="{{ image_barJobSat }}" alt=""/>
+    <img src="{{ image }}" alt=""/>
+    <img src="{{ image_age }}" alt=""/>
+    <img src="{{ image_barDistance }}" alt=""/> -->
+      {% autoescape off %}
+    {{ plot_div }}
+    {% endautoescape %}
+</body>
+</html>
